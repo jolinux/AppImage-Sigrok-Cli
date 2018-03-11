@@ -30,12 +30,6 @@ Damit lassen sich z.B. auch lokale Firmwareverzeichnisse zu Testzwecken nutzen.
 
 
 # Meine Installationsparty
-Swig
-libftdi1
-librevisa
-libgpib
-libieee1284
-
 Um das AppImage erstellen zu können sind einige Überlegungen und Vorbereitungen notwendig.
 Ein AppImage ist ein Readonly-System und eine nachträgliche Erweiterung ist nicht möglich ohne es neu zu erstellen.
 D.h. die Funktionalität ist beschränkt auf die einkompilierten Sourcen. Meine Erwartung ging dahin sigrok-cli bzw. 
