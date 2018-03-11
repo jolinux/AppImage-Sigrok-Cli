@@ -35,6 +35,7 @@ libftdi1
 librevisa
 libgpib
 libieee1284
+
 Um das AppImage erstellen zu können sind einige Überlegungen und Vorbereitungen notwendig.
 Ein AppImage ist ein Readonly-System und eine nachträgliche Erweiterung ist nicht möglich ohne es neu zu erstellen.
 D.h. die Funktionalität ist beschränkt auf die einkompilierten Sourcen. Meine Erwartung ging dahin sigrok-cli bzw. 
@@ -53,14 +54,19 @@ Das Verfahren ist sehr gut dokumentiert im Sigrok-Wiki.
 https://sigrok.org/wiki/Building#Installing_to_a_non-standard_directory_using_LD_RUN_PATH
 
 (Eine kleine Hürde ist zu nehmen beim Installieren von libsigrok, wenn das (Prefix)Ziel-Verzeichnis neu/leer ist. 
-Der Prozeß meldet einen Fehler weil der Zielfad "/lib/python2.7/site-packages" nicht existiert)
+Der Prozeß meldet einen Fehler weil der Zielpfad "/lib/python2.7/site-packages" nicht existiert)
 Bei einer Standard-Linux-Installation fehlen einige LIBs für den vollständigen sigrok-Funktionsumfang. Dies meldet der
-libsigrok-configure-Prozeß mit einer seitenlangen Ausgabe im Terminal. 
-_Swig_ mußte auf einen neueren Versionstand gehoben werden => dies lößte ich mit einem DEB-File aus den Backports
+libsigrok-configure-Prozeß mit einer seitenlangen Ausgabe im Terminal.
+
+_Swig_ mußte auf einen neueren Versionstand gehoben werden => hier hilft ein DEB-File aus den Backports
+
 _libftdi1_ mußte aus den Sourcen generiert und ins System installiert werden (kann ich vieleicht noch allgemein brauchen) 
+
 _libieee1284_ war einfach, konnte ich per Systemverwaltung installieren 
+
 _librevisa_ und _libgpib_ waren da schon komplizierter. Obwohl librevisa auf Debian-Webseiten bekannt ist so ist es in der DEB-Systemverwaltung nicht zu finden. Von Debian ist librevisa kurzerhand umbennant worden in libvisa, was man bei genauerem Hinsehen auf den Debian-Webseiten auch sehen kann. Ein Installieren führt auch nicht zum Erfolg, da es von dem 
 configure-Prozeß nicht gefunden werden kann. 
+
 Nur ein Forschen in den configure-Sourcen (libsigrok) kam der Ursache näher. Es fehlte eine entsprechende librevisa.pc-Datei     
 im selbstdefinierten lokalen PKG_CONFIG_PATH, welche bei einer händisch lokalen Installation mit Prefix aus den Sourcen mit 'configure', 'make' und 'make install' angelegt wird.
 
