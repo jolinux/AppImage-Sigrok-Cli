@@ -1,12 +1,17 @@
 # AppImage-Sigrok-Cli
 Mein AppImage mit allen Modulen für libsigrok kompiliert. Sourcen aus Github mit dem 
 Stand März 2018 (commit 94cf02d5 https://github.com/jolinux/libsigrok/commit/94cf02d0c24580322fdf9238a96a563205b943d2) .
+
 Mein System ist Debian Jessie 64bit.
+
+Download unter 
+https://github.com/jolinux/AppImage-Sigrok-Cli/releases
 
 # Hardware
 Für die Ansteuerung der jeweiligen Hardware sind Firmware und udev-rules in die entsprechenden Verzeichnisse zu kopieren!
 
 sudo cp "/entpackverzeichnis/"libsigrok/contrib/60-libsigrok.rules /etc/udev/rules.d/
+
 sudo cp "/entpackverzeichnis/"libsigrok/contrib/61*.rules /etc/udev/rules.d/
 
 Bitte auch die 61*.rules kopieren, da nur dort die Rechteverwaltung beinhaltet ist. Damit die Ausführung vom AppImage 
@@ -24,7 +29,7 @@ SIGROK_FIRMWARE_DIR=/usr/local/share/sigrok-firmware/dslogic-firmware ./sigrok-c
 Damit lassen sich z.B. auch lokale Firmwareverzeichnisse zu Testzwecken nutzen. 
 
 
-#Meine Installationsparty
+# Meine Installationsparty
 Swig
 libusb
 libftdi1
