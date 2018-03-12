@@ -1,8 +1,9 @@
 # AppImage-Sigrok-Cli
-Mein AppImage mit allen Modulen für libsigrok kompiliert. Sourcen aus Github mit dem 
-Stand März 2018 (commit 94cf02d5 https://github.com/jolinux/libsigrok/commit/94cf02d0c24580322fdf9238a96a563205b943d2) .
+* Mein AppImage mit allen Modulen für libsigrok kompiliert.
+* Sourcen von Github mit dem Stand März 2018 
+* (commit 94cf02d5 https://github.com/jolinux/libsigrok/commit/94cf02d0c24580322fdf9238a96a563205b943d2) .
 
-Mein System ist Debian Jessie 64bit.
+Mein System ist ein Debian Jessie 64bit.
 
 Download unter 
 https://github.com/jolinux/AppImage-Sigrok-Cli/releases
@@ -61,6 +62,19 @@ _libieee1284_ war einfach, konnte ich per Systemverwaltung installieren
 _librevisa_ und _libgpib_ waren da schon komplizierter. Obwohl librevisa auf Debian-Webseiten bekannt ist so ist es in der DEB-Systemverwaltung nicht zu finden. Von Debian ist librevisa kurzerhand umbennant worden in libvisa, was man bei genauerem Hinsehen auf den Debian-Webseiten auch sehen kann. Ein Installieren führt auch nicht zum Erfolg, da es von dem 
 configure-Prozeß nicht gefunden werden kann. 
 
-Nur ein Forschen in den configure-Sourcen (libsigrok) kam der Ursache näher. Es fehlte eine entsprechende librevisa.pc-Datei     
-im selbstdefinierten lokalen PKG_CONFIG_PATH, welche bei einer händisch lokalen Installation mit Prefix aus den Sourcen mit 'configure', 'make' und 'make install' angelegt wird.
+Nur ein Forschen in den configure-Sourcen (libsigrok) kam der Ursache näher. Es fehlte eine entsprechende librevisa.pc-Datei im selbstdefinierten lokalen PKG_CONFIG_PATH, welche bei einer händisch lokalen Installation mit Prefix aus den Sourcen mit 'configure', 'make' und 'make install' angelegt wird.
 
+_libgpib_ ist für sigrok eigentlich nur eine Lib. Im Internet findet man dazu nicht viel. Schlußendlich fand ich dann doch ein umfangreiches Kernel-Source-Packet zum selber kompilieren. Da ich mein Hostsystem mit Kernelerweiterungen nicht belasten wollte und nur an der Lib interessiert war, entschied ich mich auch hier für eine lokale Installation mit dem schon angewanten PREFIX. Ein 'make install' ohne Rootrechte ließ nur das lokale Kopieren zu.
+
+### Quellen:
+* https://packages.debian.org/search?suite=jessie-backports&searchon=names&keywords=swig
+* https://www.intra2net.com/en/developer/libftdi/download.php
+* http://www.librevisa.org/downloads/
+* https://sourceforge.net/projects/linux-gpib/files/
+
+
+### Dateien:
+* swig3.0_3.0.10-1.1~bpo8+1_amd64.deb
+* libftdi1-1.4.tar.bz2
+* librevisa-0.0.20130412.tar.gz
+* linux-gpib-4.1.0.tar.gz
