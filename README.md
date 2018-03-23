@@ -29,6 +29,14 @@ SIGROK_FIRMWARE_DIR=/usr/local/share/sigrok-firmware/dslogic-firmware ./sigrok-c
 
 Damit lassen sich z.B. auch lokale Firmwareverzeichnisse zu Testzwecken nutzen. 
 
+Diese Umgebungs-Variablen (Environment-Variable) sind recht nützlich, so gibt es auch für den Bereich Decoder 
+eine entsprechende:  SIGROKDECODE_DIR. (https://sigrok.org/wiki/Protocol_decoder_HOWTO)
+
+ `$ SIGROKDECODE_DIR=/path/to/libsigrokdecode/decoders/ sigrok-cli … -P <decodername>`
+ 
+ Sie soll Auswirkungen haben auf libsigrokdecode.
+
+
 
 # Meine Installationsparty
 Um das AppImage erstellen zu können sind einige Überlegungen und Vorbereitungen notwendig.
