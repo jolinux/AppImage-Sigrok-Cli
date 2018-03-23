@@ -86,3 +86,11 @@ _libgpib_ ist für sigrok eigentlich nur eine Lib. Im Internet findet man dazu n
 * libftdi1-1.4.tar.bz2
 * librevisa-0.0.20130412.tar.gz
 * linux-gpib-4.1.0.tar.gz
+
+
+### Pulseview AppImage unter sigrok
+https://sigrok.org/wiki/Downloads#Binaries_and_distribution_packages
+
+
+
+Danke Sigrok
